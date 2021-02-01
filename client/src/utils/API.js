@@ -10,7 +10,8 @@ export default {
     return axios.get("/api/trucks/" + id);
   },
   // Saves a book to the database
-  // saveTruck: function(bookData) {
-  //   return axios.post("/api/trucks", truckData);
-  // }
+  saveTruck: function(truckData) {
+    console.log(truckData);
+    return axios.post("/api/trucks", truckData);
+  }
 };
