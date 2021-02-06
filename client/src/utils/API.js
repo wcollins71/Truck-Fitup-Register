@@ -19,6 +19,6 @@ export default {
   
   updateTruck: function(truckData) {
     console.log(truckData);
-    return axios.put("/api/trucks/" + truckData);
+    return axios.put("/api/trucks/" + truckData._id, truckData);
   }
 };

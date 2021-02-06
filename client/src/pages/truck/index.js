@@ -13,8 +13,14 @@ export default function Truck(props) {
 
   const {id} = useParams()
   useEffect(() => {
+    console.log("Starting new Load truck!")
+
     API.getTruck(id)
-    .then((res) => setTruck(res.data))
+    .then((res) => {setTruck(res.data)
+      console.log(res.data)
+      console.log("Loaded truck!")
+      console.log(register)
+    })
     .catch((err) => console.log("This error: " + err));
   }, []);
 
@@ -26,7 +32,7 @@ export default function Truck(props) {
     console.log(data);
     API.updateTruck(data)
       .then(
-        console.log("Submitted." + data)
+        console.log("Submitted.", data)
       )
       .catch((err) => console.log(err));
   }
@@ -70,14 +76,14 @@ export default function Truck(props) {
         formRef={register}
         description="Drop Off Date"
         type="date"
-        defaultValue={moment(truck.dropOffDate).format("DD-MM-YYYY")}
+        defaultValue={truck.dropOffDate ? moment.utc(truck.dropOffDate).format("yyyy-MM-DD") : null}
       />
       <FormField
         name="collectionDate"
         formRef={register}
         description="Collection Date"
         type="date"
-        defaultValue={moment(truck.collectionDate).format("YYYY-MM-DD")}
+        defaultValue={truck.collectionDate ? moment.utc(truck.collectionDate).format("yyyy-MM-DD") : null}
       />
       <FormField
         name="conactPerson"
