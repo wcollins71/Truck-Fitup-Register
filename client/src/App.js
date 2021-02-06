@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Nav from "./components/Nav";
 import Dashboard from "./pages/dashboard/index";
 import NewTruck from "./pages/newTruck";
+import Truck from "./pages/truck";
 
 function App() {
   return (
@@ -16,9 +17,9 @@ function App() {
           <Route exact path="/newtruck">
             <NewTruck />
           </Route>
-          {/* <Route exact path="/trucks/:id">
-            <Detail />
-          </Route> */}
+          <Route exact path="/truck/:id">
+            <Truck />
+          </Route>
           {/* <Route>
             <NoMatch />
           </Route> */}

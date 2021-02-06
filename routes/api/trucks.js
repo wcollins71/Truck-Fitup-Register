@@ -12,10 +12,10 @@ router
 //   .route("/newtruck")
 //   .post(trucksController.create);
 
-// router
-//   .route("/:id")
-//   .get(trucksController.findById)
-//   .put(trucksController.update)
+router
+  .route("/:id")
+  .get(trucksController.findById)
+  .put(trucksController.update);
 //   .delete(trucksController.remove);
 module.exports = router;
 

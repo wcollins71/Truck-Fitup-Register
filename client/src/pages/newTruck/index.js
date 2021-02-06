@@ -1,100 +1,91 @@
-import React, { useState } from "react";
+import React from "react";
 import { useForm } from "react-hook-form";
 import FormField from "../../components/Form/index";
+import { useHistory } from 'react-router-dom';
 import API from "../../utils/API";
 import "./style.css";
 
 function NewTruck() {
   const { register, handleSubmit } = useForm();
-  const [formObject, setFormObject] = useState({
-    chassisId: "",
-    customer: "",
-    location: "",
-    purpose: "",
-    dropOffDate: "",
-    collectionDate: "",
-    conactPerson: "",
-    conactEmail: "",
-    conactNumber: "",
-  });
-
+  const history = useHistory();
   function onSubmit(data) {
 
     // if (formObject.chassisId) {
     console.log(data);
     API.saveTruck(data)
       .then(
-        console.log("Submitted.")
+        history.push("/")
       )
       .catch((err) => console.log(err));
   }
 
   return (
-    <div class="row">
-      <div class="col-3"></div>
-      <div class="col-6 text-center mt-3">
+    <div className="row">
+      <div className="col-3"></div>
+      <div className="col-6 text-center mt-3">
         <form className="form" onSubmit={handleSubmit(onSubmit)}>
-          {/* <div class="form-group row">
-            <label for={field} class="col-sm-4 col-form-label">
-            Chassis ID
-            </label>
-            <div class="col-sm-6">
-              <input type="text" class="form-control" id="chassisId" />
-            </div>
-          </div> */}
           <FormField
             name="chassisId"
             formRef={register}
             description="Chassis ID"
             type="text"
+            defaultValue=""
           />
           <FormField
             name="customer"
             formRef={register}
             description="Customer"
             type="text"
+            defaultValue=""
           />
           <FormField
             name="location"
             formRef={register}
             description="Location"
             type="text"
+            defaultValue=""
           />
           <FormField
             name="purpose"
             formRef={register}
             description="Purpose"
             type="text"
+            defaultValue=""
           />
           <FormField
             name="dropOffDate"
             formRef={register}
             description="Drop Off Date"
             type="date"
+            defaultValue=""
           />
           <FormField
             name="collectionDate"
             formRef={register}
             description="Collection Date"
             type="date"
+            defaultValue=""
           />
           <FormField
             name="conactPerson"
             formRef={register}
             description="Conact Person"
             type="text"
+            defaultValue=""
           />
           <FormField
             name="conactEmail"
             formRef={register}
             description="Conact Email"
             type="email"
+            defaultValue=""
           />
           <FormField
             name="conactNumber"
             formRef={register}
             description="Conact Number"
             type="text"
+            defaultValue=""
           />
           <input type="submit" className="btn btnDark"/>
         </form>
@@ -104,4 +95,4 @@ function NewTruck() {
 }
 
 export default NewTruck;
-// disabled={!(formObject.chassisId )}
+
