@@ -1,6 +1,7 @@
 import React, { useState, useEffect  } from "react";
 import { useForm } from "react-hook-form";
 import { useParams } from "react-router-dom";
+import { useHistory } from 'react-router-dom';
 import FormField from "../../components/Form/index";
 import API from "../../utils/API";
 import "./style.css";
@@ -10,7 +11,7 @@ var moment = require("moment");
 export default function Truck(props) {
 
   const [truck, setTruck] = useState({});
-
+  const history = useHistory();
   const {id} = useParams()
   useEffect(() => {
     console.log("Starting new Load truck!")
@@ -32,7 +33,7 @@ export default function Truck(props) {
     console.log(data);
     API.updateTruck(data)
       .then(
-        console.log("Submitted.", data)
+        history.push("/")
       )
       .catch((err) => console.log(err));
   }
