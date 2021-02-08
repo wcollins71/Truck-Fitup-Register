@@ -117,7 +117,7 @@ export default function Truck(props) {
           <Select
             name="archived"
             formRef={register}
-            description="Archive"
+            description="Archived"
             defaultValue={truck.archived}
           />
           <input type="submit" className="btn btnDark" />
