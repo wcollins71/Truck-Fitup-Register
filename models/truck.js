@@ -8,9 +8,9 @@ const truckSchema = new Schema({
   purpose: String,
   dropOffDate: Date,
   collectionDate: Date,
-  conactPerson: String,
-  conactEmail: String,
-  conactNumber: String,
+  contactPerson: String,
+  contactEmail: String,
+  contactNumber: String,
   archived: {
     type: Boolean,
     default: false

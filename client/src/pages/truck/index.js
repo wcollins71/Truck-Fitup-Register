@@ -88,23 +88,23 @@ export default function Truck(props) {
         defaultValue={truck.collectionDate ? moment.utc(truck.collectionDate).format("yyyy-MM-DD") : null}
       />
       <FormField
-        name="conactPerson"
+        name="contactPerson"
         formRef={register}
-        description="Conact Person"
+        description="Contact Person"
         type="text"
         defaultValue={truck.conactPerson}
       />
       <FormField
-        name="conactEmail"
+        name="contactEmail"
         formRef={register}
-        description="Conact Email"
+        description="Contact Email"
         type="email"
         defaultValue={truck.conactEmail}
       />
       <FormField
-        name="conactNumber"
+        name="contactNumber"
         formRef={register}
-        description="Conact Number"
+        description="Contact Number"
         type="text"
         defaultValue={truck.conactNumber}
       />

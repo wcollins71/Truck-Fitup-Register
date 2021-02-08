@@ -67,23 +67,23 @@ function NewTruck() {
             defaultValue=""
           />
           <FormField
-            name="conactPerson"
+            name="contactPerson"
             formRef={register}
-            description="Conact Person"
+            description="Contact Person"
             type="text"
             defaultValue=""
           />
           <FormField
-            name="conactEmail"
+            name="contactEmail"
             formRef={register}
-            description="Conact Email"
+            description="Contact Email"
             type="email"
             defaultValue=""
           />
           <FormField
-            name="conactNumber"
+            name="contactNumber"
             formRef={register}
-            description="Conact Number"
+            description="Contact Number"
             type="text"
             defaultValue=""
           />
