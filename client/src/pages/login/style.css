@@ -3,3 +3,10 @@
     margin-left: auto;
     margin-right: auto;
 }
+
+.btnLogin{
+    margin-top: 20px;
+    color: white !important;
+    background-color: #343a40 !important;
+
+}

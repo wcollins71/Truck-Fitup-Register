@@ -10,6 +10,8 @@ var moment = require("moment");
 
 export default function Truck(props) {
   const [truck, setTruck] = useState({});
+  console.log("Archived: ", truck.archived);
+
   const history = useHistory();
   const { id } = useParams();
   useEffect(() => {
@@ -20,7 +22,7 @@ export default function Truck(props) {
         setTruck(res.data);
         console.log(res.data);
         // console.log("Loaded truck!")
-        // console.log(register)
+        
       })
       .catch((err) => console.log("This error: " + err));
   }, []);
@@ -119,6 +121,9 @@ export default function Truck(props) {
             defaultValue={truck.archived}
           />
           <input type="submit" className="btn btnDark" />
+          <a className="btn btn-secondary cancelBtn btnDark" href="/" role="button">
+            Cancel
+          </a>
         </form>
       </div>
     </div>

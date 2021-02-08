@@ -4,14 +4,14 @@ const db = require("../models");
 module.exports = {
   findActive: function(req, res) {
     db.Truck
-      .find({ "archived": false })
+      .find({ "archived": "false" })
       .then(dbTrucks => res.json(dbTrucks))
       .catch(err => res.status(422).json(err));
   }
   ,
   findArchives: function(req, res) {
     db.Truck
-      .find({ "archived": true })
+      .find({ "archived": "true" })
       .then(dbTrucks => res.json(dbTrucks))
       .catch(err => res.status(422).json(err));
   }

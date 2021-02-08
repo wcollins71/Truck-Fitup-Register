@@ -2,16 +2,20 @@ import React from "react";
 import "./style.css";
 
 function SelectField({ name, formRef, description, defaultValue }) {
-  return (
+  console.log(defaultValue)
+ return (
     <div className="form-group row">
       <label htmlFor={name} className="col-sm-4 col-form-label">
         {description}
       </label>
       <div className="col-sm-6">
-        {/* <input className="form-control" ref={formRef} name="archived"></input> */}
-        
-        <select  className="form-select form-select-lg mb-3" ref={formRef} name={name} defaultValue={defaultValue}>
-                 <option value="">Select</option>
+        <select
+          className="form-select form-select-lg mb-3" 
+          ref={formRef}
+          name={name}
+          defaultValue={defaultValue}
+        > 
+          <option value="false">Select</option>  {/* If truck already archived and you make a change, then assumes that it is still active */}
           <option value="false">False</option>
           <option value="true">True</option>
         </select>

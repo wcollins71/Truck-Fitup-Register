@@ -12,8 +12,8 @@ const truckSchema = new Schema({
   contactEmail: String,
   contactNumber: String,
   archived: {
-    type: Boolean,
-    default: false
+    type: String,
+    default: "false"
 },
 });
 

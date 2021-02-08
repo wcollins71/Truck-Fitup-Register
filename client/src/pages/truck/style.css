@@ -1,4 +1,18 @@
 .btnDark{
     color: white !important;
     background-color: #343a40 !important;
+    margin-left: 100px;
 }
+
+@media (max-width: 800px) { 
+    .btnDark{
+        margin-right: 30px;
+        margin-left: 30px;
+    }
+ }
+
+ @media (max-width: 576px) { 
+     .btnDark{
+         margin-top: 30px;
+          }
+  }
