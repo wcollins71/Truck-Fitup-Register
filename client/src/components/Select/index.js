@@ -1,50 +1,23 @@
 import React from "react";
 import "./style.css";
 
-function FormField({ name, formRef, description, defaultValue }) {
-  if (defaultValue == null) {
-    return (
-      <div className="form-group row">
-        <select name="name" ref={formRef}>
-          <option value="True">True</option>
-          <option value="False">False</option>
-        </select>
-        {/* <select htmlFor={name} className="col-sm-4 col-form-label">
-          {description}
-        </select> */}
-        {/* <div className="col-sm-6">
-          <input
-            type={type}
-            className="form-control"
-            ref={formRef}
-            name={name}
-          />
-        </div> */}
-      </div>
-    );
-  }
+function SelectField({ name, formRef, description, defaultValue }) {
   return (
     <div className="form-group row">
-   <select name="name" ref={formRef}>
-          <option value="True">True</option>
-          <option value="False">False</option>
-        </select>
-
-
-      {/* <label htmlFor={name} className="col-sm-4 col-form-label">
+      <label htmlFor={name} className="col-sm-4 col-form-label">
         {description}
       </label>
       <div className="col-sm-6">
-        <input
-          type={type}
-          className="form-control"
-          ref={formRef}
-          name={name}
-          defaultValue={defaultValue}
-        /> */}
-      {/* </div> */}
+        {/* <input className="form-control" ref={formRef} name="archived"></input> */}
+        
+        <select  className="form-select form-select-lg mb-3" ref={formRef} name={name} defaultValue={defaultValue}>
+                 <option value="">Select</option>
+          <option value="false">False</option>
+          <option value="true">True</option>
+        </select>
+      </div>
     </div>
   );
 }
 
-export default FormField;
+export default SelectField;

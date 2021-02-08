@@ -48,7 +48,7 @@ function Trucks() {
                   Collection Date
                 </th>
                 <th scope="col" className="d-none d-sm-table-cell">
-                  Conact Person
+                  Contact Person
                 </th>
                 <th scope="col" className="d-none d-sm-table-cell">
                   Contact Email
@@ -72,13 +72,13 @@ function Trucks() {
                     {getDateValue(truck.collectionDate)}
                   </td>
                   <td className="d-none d-sm-table-cell">
-                    {truck.conactPerson}
+                    {truck.contactPerson}
                   </td>
                   <td className="d-none d-sm-table-cell">
-                    {truck.conactEmail}
+                    {truck.contactEmail}
                   </td>
                   <td className="d-none d-sm-table-cell">
-                    {truck.conactNumber}
+                    {truck.contactNumber}
                   </td>
                 </tr>
               ))}
