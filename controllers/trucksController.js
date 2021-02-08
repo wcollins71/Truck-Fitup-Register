@@ -2,9 +2,16 @@ const db = require("../models");
 
 // Defining methods for the booksController
 module.exports = {
-  findAll: function(req, res) {
+  findActive: function(req, res) {
     db.Truck
-      .find(req.query)
+      .find({ "archived": false })
+      .then(dbTrucks => res.json(dbTrucks))
+      .catch(err => res.status(422).json(err));
+  }
+  ,
+  findArchives: function(req, res) {
+    db.Truck
+      .find({ "archived": true })
       .then(dbTrucks => res.json(dbTrucks))
       .catch(err => res.status(422).json(err));
   }
@@ -27,7 +34,7 @@ module.exports = {
   update: function(req, res) {
     console.log("req")
     db.Truck
-      .findOneAndUpdate({ _id: req.params.id }, req.body)
+      .findByIdAndUpdate({ _id: req.params.id }, req.body)
       .then(dbTrucks => res.json(dbTrucks))
       .catch(err => res.status(422).json(err));
   }

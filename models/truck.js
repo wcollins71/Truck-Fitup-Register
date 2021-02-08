@@ -10,7 +10,11 @@ const truckSchema = new Schema({
   collectionDate: Date,
   conactPerson: String,
   conactEmail: String,
-  conactNumber: String
+  conactNumber: String,
+  archived: {
+    type: Boolean,
+    default: false
+},
 });
 
 const Truck = mongoose.model("Truck", truckSchema);

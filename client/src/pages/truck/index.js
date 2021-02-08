@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { useParams } from "react-router-dom";
 import { useHistory } from 'react-router-dom';
 import FormField from "../../components/Form/index";
+import Select from "../../components/Select/index";
 import API from "../../utils/API";
 import "./style.css";
 var moment = require("moment");
@@ -19,8 +20,8 @@ export default function Truck(props) {
     API.getTruck(id)
     .then((res) => {setTruck(res.data)
       console.log(res.data)
-      console.log("Loaded truck!")
-      console.log(register)
+      // console.log("Loaded truck!")
+      // console.log(register)
     })
     .catch((err) => console.log("This error: " + err));
   }, []);
@@ -106,6 +107,13 @@ export default function Truck(props) {
         description="Conact Number"
         type="text"
         defaultValue={truck.conactNumber}
+      />
+      <FormField
+        name="archived"
+        formRef={register}
+        description="Archived"
+        type="checkbox"
+        defaultValue={truck.archived}
       />
       <input type="submit" className="btn btnDark"/>
     </form>

@@ -4,13 +4,13 @@ const trucksController = require("../../controllers/trucksController");
 // Matches with "/api/trucks"
 router
   .route("/")
-  .get(trucksController.findAll)
+  .get(trucksController.findActive)
   .post(trucksController.create);
 
-// Matches with "/api/books/:id"
-// router
-//   .route("/newtruck")
-//   .post(trucksController.create);
+router
+  .route("/archives")
+  .get(trucksController.findArchives);
+
 
 router
   .route("/:id")
@@ -19,17 +19,3 @@ router
 //   .delete(trucksController.remove);
 module.exports = router;
 
-// const router = require("express").Router();
-// const Truck = require("../models/truck.js");
-
-// router.get("/api/trucks", (req, res) => {
-//   Transaction.find({})
-//     .then((dbTrucks) => {
-//       res.json(dbTrucks);
-//     })
-//     .catch((err) => {
-//       res.status(400).json(err);
-//     });
-// });
-
-// module.exports = router;

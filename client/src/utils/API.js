@@ -5,11 +5,13 @@ export default {
   getTrucks: function() {
     return axios.get("/api/trucks");
   },
+  getArchives: function() {
+    const truckData = axios.get("/api/trucks/archives");
+    console.log(truckData);
+    return axios.get("/api/trucks/archives");
+  },
   // Gets the book with the given id
   getTruck: function(id) {
-    console.log(id);
-    const truckData = axios.get("/api/trucks/" + id);
-    console.log(truckData);
     return axios.get("/api/trucks/" + id);
   },
   // Saves a book to the database
@@ -18,7 +20,6 @@ export default {
   },
   
   updateTruck: function(truckData) {
-    console.log(truckData);
     return axios.put("/api/trucks/" + truckData._id, truckData);
   }
 };
