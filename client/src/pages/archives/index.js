@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import "../../../node_modules/react-bootstrap-table/dist/react-bootstrap-table-all.min.css";
 import API from "../../utils/API";
 import { useHistory } from 'react-router-dom';
 import "./style.css";
