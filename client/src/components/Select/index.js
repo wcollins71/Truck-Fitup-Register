@@ -15,12 +15,12 @@ function SelectField({ name, formRef, description, defaultValue }) {
 
   return (
     <div className="form-group row">
-      <label htmlFor={name} className="col-sm-4 col-form-label">
+      <label htmlFor={name} className="col-sm-4 col-form-label d-none d-md-block">
         {description}
       </label>
       <div className="col-sm-6">
         <select
-          className="form-select form-select-lg mb-3"
+          className="form-select form-select-lg mb-3 d-none d-md-block"
           ref={formRef}
           name={name}
           value={currentVal}
