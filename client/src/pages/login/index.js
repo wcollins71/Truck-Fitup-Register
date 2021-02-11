@@ -2,7 +2,6 @@ import React, { useRef, useState } from "react";
 import { Form, Button, Alert } from "react-bootstrap";
 import { useAuth } from "../../contexts/AuthContext";
 import { useHistory } from "react-router-dom";
-import "../../../node_modules/react-bootstrap-table/dist/react-bootstrap-table-all.min.css";
 import "./style.css";
 
 export default function Login() {
