@@ -55,6 +55,10 @@ export default function Login() {
                 required
               />
             </Form.Group>
+            <p>For testing purposes, use the following credentials: <br></br>
+              Email: test@email.com <br></br>
+              Password: password
+            </p>
             <Button disabled={loading} className="btn btnLogin" type="submit">
               Log In
             </Button>
