@@ -1,8 +1,14 @@
 {
-  "name": "truckfitupregister",
+  "name": "truck-fitup-register",
   "version": "1.0.0",
-  "description": "Truck Fitup Register",
+  "description": "<h1 align=\"center\">Welcome to TCWA Truck Fitup Register 👋</h1> <p>   <img alt=\"Version\" src=\"https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000\" />   <img src=\"https://img.shields.io/badge/npm-%3E%3D5.5.0-blue.svg\" />   <img src=\"https://img.shields.io/badge/node-%3E%3D9.3.0-blue.svg\" /> </p>",
   "main": "server.js",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "firebase": "^8.2.6",
+    "react-bootstrap": "^1.4.3"
+  },
+  "devDependencies": {},  
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": "node server.js",
@@ -12,21 +18,5 @@
     "install": "cd client && npm install",
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build"
-  },
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "concurrently": "^4.1.0",
-    "nodemon": "^1.18.7"
-  },
-  "dependencies": {
-    "axios": "^0.21.1",
-    "dotenv": "^8.2.0",
-    "express": "^4.16.3",
-    "firebase": "^8.2.6",
-    "if-env": "^1.0.4",
-    "moment": "^2.29.1",
-    "mongoose": "^5.11.13",
-    "react-bootstrap": "^1.4.3"
-  }
+  } 
 }
